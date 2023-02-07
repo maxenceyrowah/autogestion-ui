@@ -1,7 +1,22 @@
-import { Box } from '@mui/material';
+import { QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { SnackbarProvider } from 'notistack'
+
+import { anchorOrigin, queryClient, SnackbarUtilsConfigurator } from './config'
+import { RouterProvider, Routes } from './routes'
 
 const App = () => {
-  return <Box className="text-5xl text-center mt-52"> Hello world !!</Box>;
-};
+  return (
+    <SnackbarProvider anchorOrigin={anchorOrigin}>
+      <SnackbarUtilsConfigurator />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider env="dev">
+          <Routes />
+        </RouterProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </SnackbarProvider>
+  )
+}
 
-export default App;
+export default App
