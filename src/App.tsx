@@ -1,11 +1,7 @@
-import { Box } from "@mui/material"
+import { Box } from '@mui/material';
 
 const App = () => {
-  return (
-    <Box className="text-5xl text-center mt-52">
-      Hello world !!
-    </Box>
-  )
-}
+  return <Box className="text-5xl text-center mt-52"> Hello world !!</Box>;
+};
 
-export default App
+export default App;
