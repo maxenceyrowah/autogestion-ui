@@ -4,18 +4,21 @@ import { SnackbarProvider } from 'notistack'
 
 import { anchorOrigin, queryClient, SnackbarUtilsConfigurator } from './config'
 import { RouterProvider, Routes } from './routes'
+import ThemeProvider from './themes'
 
 const App = () => {
   return (
-    <SnackbarProvider anchorOrigin={anchorOrigin}>
-      <SnackbarUtilsConfigurator />
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider env="dev">
-          <Routes />
-        </RouterProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </SnackbarProvider>
+    <ThemeProvider>
+      <SnackbarProvider anchorOrigin={anchorOrigin}>
+        <SnackbarUtilsConfigurator />
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider env="dev">
+            <Routes />
+          </RouterProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </SnackbarProvider>
+    </ThemeProvider>
   )
 }
 

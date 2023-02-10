@@ -1,2 +1,2 @@
 export * from './react-query'
-export * from './notification'
+export * from './toaster'

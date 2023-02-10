@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind variants;
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+}

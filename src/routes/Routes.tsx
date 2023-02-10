@@ -6,11 +6,11 @@ import RouterLayout from './RouterLayout'
 const Routes = () => {
   return (
     <ReactWrapperRoutes>
-      <Route path="/app" element={<RouterLayout />}>
-        <Route path="login" element={<Page.LoginPage />} />
-      </Route>
+      {/* <Route path="/app" element={<RouterLayout />}> */}
+      <Route path="/login" element={<Page.LoginPage />} />
+      {/* </Route> */}
 
-      <Route path="*" element={<Navigate to="/app/login" replace />} index />
+      <Route path="*" element={<Navigate to="/login" replace />} index />
     </ReactWrapperRoutes>
   )
 }
